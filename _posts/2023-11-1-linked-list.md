@@ -6,8 +6,6 @@ img  : ../public/post-assets/DataStructure/LinkedList/title.gif
 comments: true
 ---
 
-<a href="https://github.com/DungLai/dunglai.github.io/blob/master/public/post-assets/DataStructure/LinkedList/Linked_List.ipynb"><strong>Download Jupyter/IPython Notebook here</strong></a>
-
 # Comparing Array and Linked List
 ### 1. Array
 Fixed size, contain elements of same  data type. 
