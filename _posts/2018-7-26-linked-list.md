@@ -3,6 +3,7 @@ layout : post
 title :	Linked List, Stack, Queue
 desc : <div class="tag">Data Structure</div><div class="tag">Python</div></br>An implementation of linked list data structure from scratch. 15 different opperations are implemented in python with test case for each operation.
 img  : ../public/post-assets/DataStructure/LinkedList/title.gif
+comments: true
 ---
 
 <a href="https://github.com/DungLai/dunglai.github.io/blob/master/public/post-assets/DataStructure/LinkedList/Linked_List.ipynb"><strong>Download Jupyter/IPython Notebook here</strong></a>

@@ -3,6 +3,7 @@ layout : post
 title :	K Nearest Neighbors
 desc : <div class="tag">Machine Learning</div><div class="tag">Regression</div><div class="tag">Classification</div><div class="tag">Supervised Learning</div></br>Analyze a non-parametric, instance-based learning algorithm called KNN and implement it from scratch in Python to solve classification and regression tasks.
 img  : ../public/post-assets/KNearestNeighbors/title.png
+comments: true
 ---
 <div class="tag">Machine Learning</div><div class="tag">Regression</div><div class="tag">Classification</div><div class="tag">Supervised Learning</div><div class="tag">Non Parametric</div><div class="tag">Instance-based</div>
 *Objective*: This blog introduces a supervised learning algorithm called K-nearest-neighbors (KNN) followed by application on regression and classification on [iris-flower dataset](https://en.wikipedia.org/wiki/Iris_flower_data_set). All code are written in python **from scratch** with comparable result using high level scikit-learn machine learning library.

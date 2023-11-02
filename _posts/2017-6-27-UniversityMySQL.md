@@ -3,6 +3,7 @@ layout : post
 title : University MySQL Database
 desc : <div class="tag">MySQL</div></br>Design a simple MySQL Database to store students information, including entity UML diagram, script and typical use cases description.
 img  : ../public/post-assets/UniversityMySQL/UML.png
+comments: true
 ---
 <div class="tag">MySQL</div>
 **Content:**

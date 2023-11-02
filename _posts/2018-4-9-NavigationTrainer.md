@@ -3,6 +3,7 @@ layout : post
 title : Journey Preparation Tool Project
 desc : <div class="tag">3D sound</div><div class="tag">GoogleVR</div><div class="tag">Voice interaction</div><br> An auditory based simulator for blind people. This report shows 3 different web, desktop and android versions that supports ambisonic 3D sound technology with motion-compensation, sound field rotation capability, voice interation and more.
 img  : ../public/post-assets/NavigationTrainer/title.gif
+comments: true
 ---
 
 <h3><a href="https://dunglai.github.io/COM/index.html"><strong>Demo web application</strong></a></h3>

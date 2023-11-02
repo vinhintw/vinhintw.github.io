@@ -3,6 +3,7 @@ layout : post
 title : Interactive Visualisation
 desc : <div class="tag">D3js</div><div class="tag">Visualisation</div><br> Visualizing big dataset using D3js framework, users can interact with the visualisation to explore the data.
 img  : ../public/post-assets/CarsVisualisation/title.png
+comments: true
 ---
 
 # [Click here to open web-based visualition](https://dunglai.github.io/SwinWork/cars-visual/index.html)
