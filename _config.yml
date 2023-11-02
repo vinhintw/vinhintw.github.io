@@ -7,21 +7,23 @@ kramdown:
   coderay_tab_width: 2
 highlighter:         rouge #change highlighter at https://benhur07b.github.io/2017/03/25/add-syntax-highlighting-to-your-jekyll-site-with-rouge.html
 # Setup
-title:               Dung Lai
+title:               Vinh Ng
 tagline:             'blog'
-description:         'A personal website of <a href="https://dunglai.github.io/about" target="">Dung Lai</a>, containing technical blog on technology.'
+description:         'A personal website of <a href="https://vinhintw.github.io/about" target="">Vinh Ng</a>, containing technical blog on technology.'
 # url:                 
-# baseurl:             'https://dunglai.github.io'
+# baseurl:             'https://vinhintw.github.io'
 url:                 http://lanyon.getpoole.com
 baseurl:             ''
 paginate:            5
 
 # About/contact
+plugins:
+  - jekyll-paginate
 author:
-  name:              Dung Lai
-  facebook:          https://facebook.com/dung.lai.733
-  email:             tuandunglai@gmail.com
-  github:            https://github.com/DungLai
+  name:              Vinh Ng
+  facebook:          https://facebook.com/vinhintw.info
+  email:             vinhintw2014@gmail.com
+  github:            https://github.com/vinhintw
 
 # Custom vars
 version:             1.0.0

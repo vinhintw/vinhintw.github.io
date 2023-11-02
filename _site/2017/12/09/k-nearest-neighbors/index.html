@@ -11,7 +11,7 @@
 
   <title>
     
-      K Nearest Neighbors &middot; Dung Lai
+      K Nearest Neighbors &middot; Vinh Ng
     
   </title>
 
@@ -30,15 +30,16 @@
   <!-- <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
 
   <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
   <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110006044-1"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BF3TPWNBEM"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
-    gtag('config', 'UA-110006044-1');
-  </script> 
+    gtag('config', 'G-BF3TPWNBEM');
+  </script>
 
   <!-- toogle button -->
   <script>
@@ -64,7 +65,7 @@
 <!-- Toggleable sidebar -->
 <div class="sidebar" id="sidebar">
   <div class="sidebar-item">
-    <p>A personal website of <a href="https://dunglai.github.io/about" target="">Dung Lai</a>, containing technical blog on technology.</p>
+    <p>A personal website of <a href="https://vinhintw.github.io/about" target="">Vinh Ng</a>, containing technical blog on technology.</p>
   </div>
 
   <nav class="sidebar-nav">
@@ -83,15 +84,9 @@
       
     
       
-    
-      
-    
-      
         
           <a class="sidebar-nav-item" href="/about/">About</a>
         
-      
-    
       
     
       
@@ -109,7 +104,7 @@
 
   <div class="sidebar-item">
     <p>
-      &copy; 2020. All rights reserved.
+      &copy; 2023. All rights reserved.
     </p>
   </div>
 </div>
@@ -121,36 +116,33 @@
       <div class="masthead">
         <div class="container">
           <h3 class="masthead-title">
-            <a href="/" title="Home">Dung Lai</a>
-            <small>blog</small>             
+            <a href="/" title="Home">Vinh Ng</a>
+            <small>blog</small>
           </h3>
         </div>
       </div>
-      
+
       <link rel="stylesheet" href="/public/css/blog-index.css">
 
 <nav>
 	<div class='blog-wrapper'>
 		<div class='blog-index'>
 			<strong><u>Machine learning</u></strong></br>
-				<li><a href='https://dunglai.github.io/2018/01/25/SVD/'>7. Singular Value Decomposition</a></li>
-				<li><a href='https://dunglai.github.io/2017/12/21/gradient-descent/'>6. Gradient Descent</a></li>
-				<li><a href='https://dunglai.github.io/2017/12/09/k-nearest-neighbors/'>5. K Nearest Neighbors</a></li>
-				<li><a href='https://dunglai.github.io/2017/10/10/linear-regression/'>4. Linear Regression</a></li>
-				<li><a href='https://dunglai.github.io/2017/09/21/FlappyBirdAI/'>3. AI for flappy bird game (Neural Network, Genetic Algorithm)</a></li>
-				<li><a href='https://dunglai.github.io/2017/06/10/image-compression/'>2. Image Segmentation using K-Means</a></li>
-				<li><a href='https://dunglai.github.io/2017/06/01/k-means/'>1. K-Means Clustering</a></li>
+				<li><a href=''>6. Gradient Descent</a></li>
+				<li><a href=''>5. K Nearest Neighbors</a></li>
+				<li><a href=''>4. Linear Regression</a></li>
+				<li><a href=''>3. AI for flappy bird game (Neural Network, Genetic Algorithm)</a></li>
+				<li><a href=''>2. Image Compression using K-Means</a></li>
+				<li><a href=''>1. K-Means Clustering</a></li>
 			<strong><u>Data Structure and Algorithm</u></strong></br>
-				<li><a href='https://dunglai.github.io/2018/07/26/linked-list/'>1. Linked List</a></li>
-				<li><a href='https://dunglai.github.io/2018/07/26/linked-list/#StackQueue'>2. Stack, Queue</a>	
+				<li><a href=''>1. Linked List</a></li>
+				<li><a href=''>2. Stack, Queue</a>
 			<strong><u>Other</u></strong></br>
-				<li><a href='https://dunglai.github.io/2018/07/10/cars-visualisation/'>5. Interactive Visualisation</a></li>
-				<li><a href='https://dunglai.github.io/2017/06/30/mongodbmapping/'>4. Mapping MySQL to MongoDB</a></li>
-				<li><a href='https://dunglai.github.io/2017/06/27/UniversityMySQL/'>3. University MySQL DB</a></li>
-				<li><a href='https://dunglai.github.io/2017/05/27/Planetary-Rover/'>2. Planetary Rover Game (C#, Winform)</a></li>
-				<li><a href='https://dunglai.github.io/2017/03/01/Music-Player/'>1. Music Player (Pascal)</a></li>
+				<li><a href=''>4. Mapping MySQL to MongoDB</a></li>
+				<li><a href=''>3. University MySQL DB</a></li>
+				<li><a href=''>2. Planetary Rover Game (C#, Winform)</a></li>
+				<li><a href=''>1. Music Player (Python)</a></li>
 			<strong><u>Project</u></strong></br>
-				<li><a href='https://dunglai.github.io/2018/04/09/NavigationTrainer/'>1. Journey Preparation Tool</a></li>
 		</div>
 	</div>
 </nav>
@@ -201,14 +193,14 @@
 
 <p><a name="1-introduction"></a></p>
 <h2 id="1-introduction">1. Introduction</h2>
-<p>The KNN algorithm is a simple, robust and versatile classifier in supervised learning algorithm toolbox. In spite of its simplicity, KNN can outperform more powerful classifiers in some specific applications. The name ‘<code class="highlighter-rouge">nearest neighbors</code>’ reveals some facts about the algorithm, that is, prediction is made based on their <code class="highlighter-rouge">neighbors</code> aka vectors that are close to it in high dimensional space.</p>
+<p>The KNN algorithm is a simple, robust and versatile classifier in supervised learning algorithm toolbox. In spite of its simplicity, KNN can outperform more powerful classifiers in some specific applications. The name ‘<code class="language-plaintext highlighter-rouge">nearest neighbors</code>’ reveals some facts about the algorithm, that is, prediction is made based on their <code class="language-plaintext highlighter-rouge">neighbors</code> aka vectors that are close to it in high dimensional space.</p>
 
-<p>That ‘close neighbors’ is determined by the <code class="highlighter-rouge">distance</code> between unlabeled data to labeled data. How <code class="highlighter-rouge">distance</code> is measured and how their <code class="highlighter-rouge">neighbors</code> determines label of data will be discussed in next part.
+<p>That ‘close neighbors’ is determined by the <code class="language-plaintext highlighter-rouge">distance</code> between unlabeled data to labeled data. How <code class="language-plaintext highlighter-rouge">distance</code> is measured and how their <code class="language-plaintext highlighter-rouge">neighbors</code> determines label of data will be discussed in next part.
 <a name="2-knn-methodology"></a></p>
 <h2 id="2-knn-methodology">2. KNN methodology</h2>
 <p><a name="21-unsupervised-learning-recap"></a></p>
 <h3 id="21-unsupervised-learning-recap">2.1. Unsupervised learning recap</h3>
-<p>KNN is one of the supervised learning algorithm, this means that we  are given a labeled dataset containing training observations <script type="math/tex">(\mathbf{x^i},y^i)</script> where <script type="math/tex">\mathbf{x^i}</script> is a vectors, training data containing features of data and <script type="math/tex">y</script> is label of training example <script type="math/tex">\mathbf{x^i}</script>, normally, <script type="math/tex">y^i</script> is a number representing the category where the training example belonged to. Our goal is to find the relationship between <script type="math/tex">\mathbf{x^i}</script> and <script type="math/tex">y^i</script> or learn a function <script type="math/tex">h:X \rightarrow Y</script> so that given an unlabeled observation <script type="math/tex">\mathbf{x}</script>, <script type="math/tex">h(x)</script> can predict the corresponding output <script type="math/tex">y</script>.
+<p>KNN is one of the supervised learning algorithm, this means that we  are given a labeled dataset containing training observations \((\mathbf{x^i},y^i)\) where \(\mathbf{x^i}\) is a vectors, training data containing features of data and \(y\) is label of training example \(\mathbf{x^i}\), normally, \(y^i\) is a number representing the category where the training example belonged to. Our goal is to find the relationship between \(\mathbf{x^i}\) and \(y^i\) or learn a function \(h:X \rightarrow Y\) so that given an unlabeled observation \(\mathbf{x}\), \(h(x)\) can predict the corresponding output \(y\).
 <a name="22-knn-characteristics-non-parametric-instance-based-lazy-learning"></a></p>
 <h3 id="22-knn-characteristics-non-parametric-instance-based-lazy-learning">2.2. KNN characteristics: Non-parametric, instance-based, lazy learning.</h3>
 <div class="message">
@@ -240,20 +232,20 @@ KNN is non-parametric, instance-based, lazy learning algorithms and used in supe
 
 <p><a name="24-algorithm"></a></p>
 <h3 id="24-algorithm">2.4. Algorithm</h3>
-<p>Suppose we have a training set consisting <script type="math/tex">n</script> training observations <script type="math/tex">(\mathbf{x^i},y^i)</script> for <script type="math/tex">i \in [1,n]</script>. Our goal is to predict label <script type="math/tex">y</script> of unlabeled observation <script type="math/tex">\mathbf{x}</script></p>
+<p>Suppose we have a training set consisting \(n\) training observations \((\mathbf{x^i},y^i)\) for \(i \in [1,n]\). Our goal is to predict label \(y\) of unlabeled observation \(\mathbf{x}\)</p>
 
 <p><strong>Step 1</strong>:</p>
 
-<p>Calculate <script type="math/tex">n</script> distances between <script type="math/tex">\mathbf{x}</script> to every single training example. A popular choice is Euclidean distance given by:</p>
+<p>Calculate \(n\) distances between \(\mathbf{x}\) to every single training example. A popular choice is Euclidean distance given by:</p>
 
 <p>\begin{equation} \tag{1}\label{eq:1}
 d(\mathbf{x}, \mathbf{x^i}) = ||\mathbf{x} - \mathbf{x^i}||^2_2 = \sqrt{(\mathbf{x_1}-\mathbf{x^i_1})^2+…(\mathbf{x_m}-\mathbf{x^i_m})^2}
 \end{equation}</p>
 
-<p><script type="math/tex">\mathbf{m}</script> is the number of features (or dimensions) of vector <script type="math/tex">\mathbf{x}</script>.</p>
+<p>\(\mathbf{m}\) is the number of features (or dimensions) of vector \(\mathbf{x}\).</p>
 
-<p><strong>Step 2</strong>: Choose <script type="math/tex">K</script>, the number of neighbors to have an affects on label of <script type="math/tex">\mathbf{x}</script>.
-Call <script type="math/tex">A</script> as the set of <script type="math/tex">K</script> points that are closest to <script type="math/tex">\mathbf{x}</script> based on the distances we have calculated in step 1.</p>
+<p><strong>Step 2</strong>: Choose \(K\), the number of neighbors to have an affects on label of \(\mathbf{x}\).
+Call \(A\) as the set of \(K\) points that are closest to \(\mathbf{x}\) based on the distances we have calculated in step 1.</p>
 
 <p><strong>Step 3</strong>:</p>
 
@@ -263,24 +255,24 @@ Call <script type="math/tex">A</script> as the set of <script type="math/tex">K<
 P(y=j|X=\mathbf{x}) = \frac{1}{K} \sum_{i \in A}I(y^{(i)}=j)
 \end{equation}</p>
 
-<p><script type="math/tex">I(x)</script> = 0 when statement <script type="math/tex">x</script> is false and 1 when statement <script type="math/tex">x</script> is true.</p>
+<p>\(I(x)\) = 0 when statement \(x\) is false and 1 when statement \(x\) is true.</p>
 
-<p><script type="math/tex">P(y=j \mid X=\mathbf{x})</script>: Probability of <script type="math/tex">y</script> (label of <script type="math/tex">\mathbf{x}</script>) to be <script type="math/tex">j</script> given test data <script type="math/tex">\mathbf{x}</script>.</p>
+<p>\(P(y=j \mid X=\mathbf{x})\): Probability of \(y\) (label of \(\mathbf{x}\)) to be \(j\) given test data \(\mathbf{x}\).</p>
 
 <p><strong>Step 4</strong>:</p>
 
-<p>Finally, our input <script type="math/tex">\mathbf{x}</script> gets assigned to the class with the largest probability.</p>
+<p>Finally, our input \(\mathbf{x}\) gets assigned to the class with the largest probability.</p>
 
 <p>To recap, the label of test data is the most common label around it.</p>
 
-<p>In the algorithm above, we use ‘uniform’ weight, we treat every neighbor equally no matter how close it is to <script type="math/tex">\mathbf{x}</script>. However we can use ‘distance’ weight: The distance to <script type="math/tex">\mathbf{x}</script> will also be taken into account.</p>
+<p>In the algorithm above, we use ‘uniform’ weight, we treat every neighbor equally no matter how close it is to \(\mathbf{x}\). However we can use ‘distance’ weight: The distance to \(\mathbf{x}\) will also be taken into account.</p>
 
 <p>The following weight function could be use:
 \begin{equation} \tag{3}\label{eq:3}
 w_i = exp(\frac{-||\mathbf{x}-\mathbf{x^i}||^2_2}{\lambda ^2})
 \end{equation}</p>
 
-<p>That weight function will let data points which are closer <script type="math/tex">\mathbf{x}</script> have more effects on the output <script type="math/tex">y</script>. By adding different weights to neighbors of <script type="math/tex">\mathbf{x}</script>, the conditional probability in <script type="math/tex">\eqref{eq:2}</script> becomes:</p>
+<p>That weight function will let data points which are closer \(\mathbf{x}\) have more effects on the output \(y\). By adding different weights to neighbors of \(\mathbf{x}\), the conditional probability in \(\eqref{eq:2}\) becomes:</p>
 
 <p>\begin{equation} \tag{4}\label{eq:4}
 P(y=j|X=\mathbf{x}) = \frac{1}{K} w_i \sum_{i \in A}I(y^{(i)}=j)
@@ -291,25 +283,25 @@ P(y=j|X=\mathbf{x}) = \frac{1}{K} w_i \sum_{i \in A}I(y^{(i)}=j)
 <p><a name="31-regression"></a></p>
 <h3 id="31-regression">3.1. Regression</h3>
 <p>In this apart, I will generate sample point on 2D plane and perform KNN to do regression. In this part, euclidean distance function is used and weight=’uniform’ (means all neighbors are treated the same). Script is written from scratch, at the end, I will use scikit-learn library to compare the result.</p>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
-<span class="kn">import</span> <span class="nn">copy</span>
-<span class="kn">from</span> <span class="nn">bisect</span> <span class="kn">import</span> <span class="n">bisect_left</span>
-<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">neighbors</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="n">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="n">copy</span>
+<span class="kn">from</span> <span class="n">bisect</span> <span class="kn">import</span> <span class="n">bisect_left</span>
+<span class="kn">from</span> <span class="n">sklearn</span> <span class="kn">import</span> <span class="n">neighbors</span>
 
-<span class="c">#########################################################</span>
-<span class="s">"""
+<span class="c1">#########################################################
+</span><span class="sh">"""</span><span class="s">
 Additional funtions for KNN
-"""</span>
+</span><span class="sh">"""</span>
 <span class="k">def</span> <span class="nf">takeClosest</span><span class="p">(</span><span class="n">myList</span><span class="p">,</span> <span class="n">myNumber</span><span class="p">):</span>
-	<span class="s">"""
+	<span class="sh">"""</span><span class="s">
 	Assumes myList is sorted. Returns closest value to myNumber.
 	If two numbers are equally close, return the smallest number.
-	"""</span>
-	<span class="n">pos</span> <span class="o">=</span> <span class="n">bisect_left</span><span class="p">(</span><span class="n">myList</span><span class="p">,</span> <span class="n">myNumber</span><span class="p">)</span>
+	</span><span class="sh">"""</span>
+	<span class="n">pos</span> <span class="o">=</span> <span class="nf">bisect_left</span><span class="p">(</span><span class="n">myList</span><span class="p">,</span> <span class="n">myNumber</span><span class="p">)</span>
 	<span class="k">if</span> <span class="n">pos</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
 		<span class="k">return</span> <span class="n">myList</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-	<span class="k">if</span> <span class="n">pos</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">myList</span><span class="p">):</span>
+	<span class="k">if</span> <span class="n">pos</span> <span class="o">==</span> <span class="nf">len</span><span class="p">(</span><span class="n">myList</span><span class="p">):</span>
 		<span class="k">return</span> <span class="n">myList</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 	<span class="n">before</span> <span class="o">=</span> <span class="n">myList</span><span class="p">[</span><span class="n">pos</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
 	<span class="n">after</span> <span class="o">=</span> <span class="n">myList</span><span class="p">[</span><span class="n">pos</span><span class="p">]</span>
@@ -319,72 +311,72 @@ Additional funtions for KNN
 		<span class="k">return</span> <span class="n">before</span>
 
 <span class="k">def</span> <span class="nf">takeKClosest</span><span class="p">(</span><span class="n">myList</span><span class="p">,</span> <span class="n">myNumber</span><span class="p">,</span><span class="n">k</span><span class="p">):</span>
-	<span class="s">"""
+	<span class="sh">"""</span><span class="s">
 	Assumes myList is sorted. Returns closest value to myNumber
 	Return a list of k numbers from myList that are closest to myNumber
-	"""</span>
-	<span class="n">myListCopy</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">myList</span><span class="p">)</span> <span class="c"># myList will be manipulated a copy is needed</span>
-	<span class="n">listNum</span> <span class="o">=</span> <span class="p">[]</span> <span class="c"># list of k numbers closest to myNumber</span>
-	<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">k</span><span class="p">):</span>
-		<span class="s">"""
+	</span><span class="sh">"""</span>
+	<span class="n">myListCopy</span> <span class="o">=</span> <span class="n">copy</span><span class="p">.</span><span class="nf">deepcopy</span><span class="p">(</span><span class="n">myList</span><span class="p">)</span> <span class="c1"># myList will be manipulated a copy is needed
+</span>	<span class="n">listNum</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># list of k numbers closest to myNumber
+</span>	<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">k</span><span class="p">):</span>
+		<span class="sh">"""</span><span class="s">
 		Algorithm: Find a closest number to k then remove that number from myListCopy
-		"""</span>
-		<span class="n">closestNum</span> <span class="o">=</span> <span class="n">takeClosest</span><span class="p">(</span><span class="n">myListCopy</span><span class="p">,</span> <span class="n">myNumber</span><span class="p">)</span> 
-		<span class="n">listNum</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">closestNum</span><span class="p">)</span>
-		<span class="k">del</span> <span class="n">myListCopy</span><span class="p">[</span><span class="n">myListCopy</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">closestNum</span><span class="p">)]</span>
+		</span><span class="sh">"""</span>
+		<span class="n">closestNum</span> <span class="o">=</span> <span class="nf">takeClosest</span><span class="p">(</span><span class="n">myListCopy</span><span class="p">,</span> <span class="n">myNumber</span><span class="p">)</span> 
+		<span class="n">listNum</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">closestNum</span><span class="p">)</span>
+		<span class="k">del</span> <span class="n">myListCopy</span><span class="p">[</span><span class="n">myListCopy</span><span class="p">.</span><span class="nf">index</span><span class="p">(</span><span class="n">closestNum</span><span class="p">)]</span>
 	<span class="k">return</span> <span class="n">listNum</span>
 
 <span class="k">def</span> <span class="nf">takeKClosestIdx</span><span class="p">(</span><span class="n">myList</span><span class="p">,</span> <span class="n">myNumber</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
-	<span class="s">"""
+	<span class="sh">"""</span><span class="s">
 	Get the index of k closest numbers to myNumber
-	"""</span>
-	<span class="n">closestNums</span> <span class="o">=</span> <span class="n">takeKClosest</span><span class="p">(</span><span class="n">myList</span><span class="p">,</span> <span class="n">myNumber</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+	</span><span class="sh">"""</span>
+	<span class="n">closestNums</span> <span class="o">=</span> <span class="nf">takeKClosest</span><span class="p">(</span><span class="n">myList</span><span class="p">,</span> <span class="n">myNumber</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
 	<span class="n">listIdx</span> <span class="o">=</span> <span class="p">[]</span>
 	<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">closestNums</span><span class="p">:</span>
-		<span class="n">listIdx</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">myList</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="c"># index() function looks up index of number in list</span>
-	<span class="k">return</span> <span class="n">listIdx</span>
+		<span class="n">listIdx</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">myList</span><span class="p">.</span><span class="nf">index</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="c1"># index() function looks up index of number in list
+</span>	<span class="k">return</span> <span class="n">listIdx</span>
 
-<span class="c">#########################################################</span>
-<span class="c"># Generate sample data</span>
-<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="c"># Get one random set of number every time running the program</span>
-<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="mi">5</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="c"># generate 40 values in range (0,5)</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">X</span><span class="p">)</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span> <span class="c"># ravel function spread out matrix to a single row</span>
+<span class="c1">#########################################################
+# Generate sample data
+</span><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="nf">seed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># Get one random set of number every time running the program
+</span><span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">sort</span><span class="p">(</span><span class="mi">5</span> <span class="o">*</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="nf">rand</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># generate 40 values in range (0,5)
+</span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">sin</span><span class="p">(</span><span class="n">X</span><span class="p">).</span><span class="nf">ravel</span><span class="p">()</span> <span class="c1"># ravel function spread out matrix to a single row
+</span>
+<span class="c1"># Add noise to targets
+</span><span class="n">y</span><span class="p">[::</span><span class="mi">5</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span> <span class="o">*</span> <span class="p">(</span><span class="mf">0.5</span> <span class="o">-</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="nf">rand</span><span class="p">(</span><span class="mi">8</span><span class="p">))</span> <span class="c1">#get a random number every 5 steps
+</span>
+<span class="c1"># Fit regression model
+</span><span class="n">x0</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">500</span><span class="p">)</span> <span class="c1"># x0 is used to visualize regression model
+</span><span class="n">y0</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># our goal is to fill out y0 based on x0
+</span><span class="n">k_neighbors</span> <span class="o">=</span> <span class="mi">3</span>
 
-<span class="c"># Add noise to targets</span>
-<span class="n">y</span><span class="p">[::</span><span class="mi">5</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span> <span class="o">*</span> <span class="p">(</span><span class="mf">0.5</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">8</span><span class="p">))</span> <span class="c">#get a random number every 5 steps</span>
 
-<span class="c"># Fit regression model</span>
-<span class="n">x0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">500</span><span class="p">)</span> <span class="c"># x0 is used to visualize regression model</span>
-<span class="n">y0</span> <span class="o">=</span> <span class="p">[]</span> <span class="c"># our goal is to fill out y0 based on x0</span>
-<span class="n">k_neighbors</span> <span class="o">=</span> <span class="mi">3</span>
-
-
-<span class="c"># treat every data uniformly, calculate means of k nearest value to each element in x0</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">x0</span><span class="p">:</span>
-	<span class="n">listIdx</span> <span class="o">=</span> <span class="n">takeKClosestIdx</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span><span class="o">.</span><span class="n">tolist</span><span class="p">(),</span> <span class="n">i</span><span class="p">,</span> <span class="n">k_neighbors</span><span class="p">)</span> <span class="c"># .ravel().tolist() transform numpy array to list</span>
-	<span class="n">sumY</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="c1"># treat every data uniformly, calculate means of k nearest value to each element in x0
+</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">x0</span><span class="p">:</span>
+	<span class="n">listIdx</span> <span class="o">=</span> <span class="nf">takeKClosestIdx</span><span class="p">(</span><span class="n">X</span><span class="p">.</span><span class="nf">ravel</span><span class="p">().</span><span class="nf">tolist</span><span class="p">(),</span> <span class="n">i</span><span class="p">,</span> <span class="n">k_neighbors</span><span class="p">)</span> <span class="c1"># .ravel().tolist() transform numpy array to list
+</span>	<span class="n">sumY</span> <span class="o">=</span> <span class="mi">0</span>
 	<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">listIdx</span><span class="p">:</span>
 		<span class="n">sumY</span> <span class="o">+=</span> <span class="n">y</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
-	<span class="n">y0</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sumY</span><span class="o">/</span><span class="n">k_neighbors</span><span class="p">)</span>
+	<span class="n">y0</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">sumY</span><span class="o">/</span><span class="n">k_neighbors</span><span class="p">)</span>
 
-<span class="c"># Plot graph</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>    
-<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">211</span><span class="p">)</span> <span class="c"># first graph of figure 1</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s">"KNN implemented from scratch"</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="s">'ro'</span><span class="p">)</span> <span class="c"># plot data</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span><span class="n">y0</span><span class="p">)</span>		 <span class="c"># plot regression model</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">hspace</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span> <span class="c">#adjust space between 2 graphs</span>
+<span class="c1"># Plot graph
+</span><span class="n">plt</span><span class="p">.</span><span class="nf">figure</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>    
+<span class="n">plt</span><span class="p">.</span><span class="nf">subplot</span><span class="p">(</span><span class="mi">211</span><span class="p">)</span> <span class="c1"># first graph of figure 1
+</span><span class="n">plt</span><span class="p">.</span><span class="nf">title</span><span class="p">(</span><span class="sh">"</span><span class="s">KNN implemented from scratch</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="sh">'</span><span class="s">ro</span><span class="sh">'</span><span class="p">)</span> <span class="c1"># plot data
+</span><span class="n">plt</span><span class="p">.</span><span class="nf">plot</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span><span class="n">y0</span><span class="p">)</span>		 <span class="c1"># plot regression model
+</span><span class="n">plt</span><span class="p">.</span><span class="nf">subplots_adjust</span><span class="p">(</span><span class="n">hspace</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span> <span class="c1">#adjust space between 2 graphs
+</span>
+<span class="c1"># Second graph using scikit-learn
+</span><span class="n">plt</span><span class="p">.</span><span class="nf">subplot</span><span class="p">(</span><span class="mi">212</span><span class="p">)</span> <span class="c1"># second graph of figure 1
+</span><span class="n">plt</span><span class="p">.</span><span class="nf">title</span><span class="p">(</span><span class="sh">"</span><span class="s">KNN using scikit-learn</span><span class="sh">"</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">weights</span> <span class="ow">in</span> <span class="nf">enumerate</span><span class="p">([</span><span class="sh">'</span><span class="s">uniform</span><span class="sh">'</span><span class="p">]):</span>
+	<span class="n">knn</span> <span class="o">=</span> <span class="n">neighbors</span><span class="p">.</span><span class="nc">KNeighborsRegressor</span><span class="p">(</span><span class="n">k_neighbors</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">weights</span><span class="p">)</span>
+	<span class="n">y0</span> <span class="o">=</span> <span class="n">knn</span><span class="p">.</span><span class="nf">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">).</span><span class="nf">predict</span><span class="p">(</span><span class="n">x0</span><span class="p">[:,</span> <span class="n">np</span><span class="p">.</span><span class="n">newaxis</span><span class="p">])</span>
+	<span class="n">plt</span><span class="p">.</span><span class="nf">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="sh">'</span><span class="s">ro</span><span class="sh">'</span><span class="p">)</span>
+	<span class="n">plt</span><span class="p">.</span><span class="nf">plot</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">)</span>
 
-<span class="c"># Second graph using scikit-learn</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">212</span><span class="p">)</span> <span class="c"># second graph of figure 1</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s">"KNN using scikit-learn"</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">weights</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">([</span><span class="s">'uniform'</span><span class="p">]):</span>
-	<span class="n">knn</span> <span class="o">=</span> <span class="n">neighbors</span><span class="o">.</span><span class="n">KNeighborsRegressor</span><span class="p">(</span><span class="n">k_neighbors</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">weights</span><span class="p">)</span>
-	<span class="n">y0</span> <span class="o">=</span> <span class="n">knn</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x0</span><span class="p">[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">])</span>
-	<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s">'ro'</span><span class="p">)</span>
-	<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
 </code></pre></div></div>
 <div class="imgcap">
 <img style="display: inline-block; width: 50%;" src="/public/post-assets/KNearestNeighbors/title.png" width="500" align="center" />
@@ -399,119 +391,119 @@ Additional funtions for KNN
 </div>
 <p>The dataset consists of 150 sample data (5 features: Petal Length , Petal Width , Sepal Length , Sepal width) with label (0,1,2) corresponding to 3 types of flowers. We will split 150 example to training set (100 samples) and test set (50 samples). Accuracy of the classifier that we will build can go up to 96%-100%.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
-<span class="kn">import</span> <span class="nn">random</span>
-<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">neighbors</span><span class="p">,</span> <span class="n">datasets</span>
-<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span>
-<span class="kn">import</span> <span class="nn">math</span>
-<span class="kn">import</span> <span class="nn">operator</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="n">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="n">random</span>
+<span class="kn">from</span> <span class="n">sklearn</span> <span class="kn">import</span> <span class="n">neighbors</span><span class="p">,</span> <span class="n">datasets</span>
+<span class="kn">from</span> <span class="n">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span>
+<span class="kn">import</span> <span class="n">math</span>
+<span class="kn">import</span> <span class="n">operator</span>
 
-<span class="c">#########################################################</span>
-<span class="s">"""
+<span class="c1">#########################################################
+</span><span class="sh">"""</span><span class="s">
 Additional funtions for KNN
-"""</span>
+</span><span class="sh">"""</span>
 <span class="k">def</span> <span class="nf">euclideanDistance</span><span class="p">(</span><span class="n">vector1</span><span class="p">,</span> <span class="n">vector2</span><span class="p">):</span>
-	<span class="s">"""
+	<span class="sh">"""</span><span class="s">
 	Calculate euclideanDistance of 2 vectors (in a list format)
-	"""</span>
-	<span class="k">if</span> <span class="n">vector1</span><span class="o">.</span><span class="n">shape</span> <span class="o">!=</span> <span class="n">vector2</span><span class="o">.</span><span class="n">shape</span><span class="p">:</span>
-		<span class="k">raise</span> <span class="nb">ValueError</span><span class="p">(</span><span class="s">'Two vector not in same length'</span><span class="p">)</span>
+	</span><span class="sh">"""</span>
+	<span class="k">if</span> <span class="n">vector1</span><span class="p">.</span><span class="n">shape</span> <span class="o">!=</span> <span class="n">vector2</span><span class="p">.</span><span class="n">shape</span><span class="p">:</span>
+		<span class="k">raise</span> <span class="nc">ValueError</span><span class="p">(</span><span class="sh">'</span><span class="s">Two vector not in same length</span><span class="sh">'</span><span class="p">)</span>
 
-	<span class="n">length</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">vector1</span><span class="p">)</span>
+	<span class="n">length</span> <span class="o">=</span> <span class="nf">len</span><span class="p">(</span><span class="n">vector1</span><span class="p">)</span>
 	<span class="n">distance</span> <span class="o">=</span> <span class="mi">0</span>
-	<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">length</span><span class="p">):</span>
-		<span class="n">distance</span> <span class="o">+=</span> <span class="nb">pow</span><span class="p">((</span><span class="n">vector1</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">-</span> <span class="n">vector2</span><span class="p">[</span><span class="n">x</span><span class="p">]),</span> <span class="mi">2</span><span class="p">)</span>
+	<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="n">length</span><span class="p">):</span>
+		<span class="n">distance</span> <span class="o">+=</span> <span class="nf">pow</span><span class="p">((</span><span class="n">vector1</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">-</span> <span class="n">vector2</span><span class="p">[</span><span class="n">x</span><span class="p">]),</span> <span class="mi">2</span><span class="p">)</span>
 
-	<span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">distance</span><span class="p">)</span>
+	<span class="k">return</span> <span class="n">math</span><span class="p">.</span><span class="nf">sqrt</span><span class="p">(</span><span class="n">distance</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">getKNeighbors</span><span class="p">(</span><span class="n">trainingSet</span><span class="p">,</span> <span class="n">trainingSetLabel</span><span class="p">,</span> <span class="n">testInstance</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
-	<span class="s">"""
+	<span class="sh">"""</span><span class="s">
 	Return the list of k nearest neighbors label
-	"""</span>
+	</span><span class="sh">"""</span>
 	<span class="n">neighbors</span> <span class="o">=</span> <span class="p">[]</span>
 
 	<span class="n">distances</span> <span class="o">=</span> <span class="p">[]</span>
-	<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">trainingSetLabel</span><span class="p">)):</span>
-		<span class="n">distances</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">euclideanDistance</span><span class="p">(</span><span class="n">testInstance</span><span class="p">,</span> <span class="n">trainingSet</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span> <span class="n">trainingSetLabel</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
-		<span class="n">distances</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">operator</span><span class="o">.</span><span class="n">itemgetter</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span> <span class="c"># sort distance based on first element of each tuples in list (euculidean distance)</span>
-	
-	<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">k</span><span class="p">):</span>
-		<span class="n">neighbors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">distances</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span> <span class="c">#Add k nearest neighbors to list</span>
-
+	<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nf">len</span><span class="p">(</span><span class="n">trainingSetLabel</span><span class="p">)):</span>
+		<span class="n">distances</span><span class="p">.</span><span class="nf">append</span><span class="p">((</span><span class="nf">euclideanDistance</span><span class="p">(</span><span class="n">testInstance</span><span class="p">,</span> <span class="n">trainingSet</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span> <span class="n">trainingSetLabel</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+		<span class="n">distances</span><span class="p">.</span><span class="nf">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">operator</span><span class="p">.</span><span class="nf">itemgetter</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span> <span class="c1"># sort distance based on first element of each tuples in list (euculidean distance)
+</span>	
+	<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">k</span><span class="p">):</span>
+		<span class="n">neighbors</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">distances</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span> <span class="c1">#Add k nearest neighbors to list
+</span>
 	<span class="k">return</span> <span class="n">neighbors</span>
 
 <span class="k">def</span> <span class="nf">getHighestVote</span><span class="p">(</span><span class="n">myList</span><span class="p">):</span>
-	<span class="s">"""
+	<span class="sh">"""</span><span class="s">
 	Return most common occurrence item in a list
-	"""</span>
+	</span><span class="sh">"""</span>
 	<span class="n">voteDict</span> <span class="o">=</span> <span class="p">{}</span>
 	<span class="k">for</span> <span class="n">vote</span> <span class="ow">in</span> <span class="n">myList</span><span class="p">:</span>
-		<span class="k">if</span> <span class="n">voteDict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">vote</span><span class="p">)</span> <span class="o">==</span> <span class="bp">None</span><span class="p">:</span>
+		<span class="k">if</span> <span class="n">voteDict</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="n">vote</span><span class="p">)</span> <span class="o">==</span> <span class="bp">None</span><span class="p">:</span>
 			<span class="n">voteDict</span><span class="p">[</span><span class="n">vote</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
 		<span class="k">else</span><span class="p">:</span>
 			<span class="n">voteDict</span><span class="p">[</span><span class="n">vote</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
 
 	<span class="n">maxVote</span> <span class="o">=</span> <span class="mi">0</span>
-	<span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">voteDict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+	<span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">voteDict</span><span class="p">.</span><span class="nf">items</span><span class="p">():</span>
 		<span class="k">if</span> <span class="n">value</span> <span class="o">&gt;</span> <span class="n">maxVote</span><span class="p">:</span>
 			<span class="n">maxVote</span> <span class="o">=</span> <span class="n">key</span>
 
 	<span class="k">return</span> <span class="n">maxVote</span>
 
 <span class="k">def</span> <span class="nf">predictNearestNeighbor</span><span class="p">(</span><span class="n">trainingSet</span><span class="p">,</span> <span class="n">trainingSetLabel</span><span class="p">,</span> <span class="n">testInstance</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
-	<span class="s">"""
+	<span class="sh">"""</span><span class="s">
 	Return the prediction based on KNN algorithm
-	"""</span>
-	<span class="n">neighbors</span> <span class="o">=</span> <span class="n">getKNeighbors</span><span class="p">(</span><span class="n">trainingSet</span><span class="p">,</span> <span class="n">trainingSetLabel</span><span class="p">,</span> <span class="n">testInstance</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
-	<span class="k">return</span><span class="p">(</span><span class="n">getHighestVote</span><span class="p">(</span><span class="n">neighbors</span><span class="p">))</span>
+	</span><span class="sh">"""</span>
+	<span class="n">neighbors</span> <span class="o">=</span> <span class="nf">getKNeighbors</span><span class="p">(</span><span class="n">trainingSet</span><span class="p">,</span> <span class="n">trainingSetLabel</span><span class="p">,</span> <span class="n">testInstance</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+	<span class="nf">return</span><span class="p">(</span><span class="nf">getHighestVote</span><span class="p">(</span><span class="n">neighbors</span><span class="p">))</span>
 
 <span class="k">def</span> <span class="nf">accuracy_score</span><span class="p">(</span><span class="n">groundTruth</span><span class="p">,</span> <span class="n">prediction</span><span class="p">):</span>
-	<span class="s">"""
+	<span class="sh">"""</span><span class="s">
 	Return accuracy score of prediction
-	"""</span>
-	<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">groundTruth</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">prediction</span><span class="p">):</span>
-		<span class="k">raise</span> <span class="nb">ValueError</span><span class="p">(</span><span class="s">'Prediction and groundTruth not in same length'</span><span class="p">)</span>
+	</span><span class="sh">"""</span>
+	<span class="k">if</span> <span class="nf">len</span><span class="p">(</span><span class="n">groundTruth</span><span class="p">)</span> <span class="o">!=</span> <span class="nf">len</span><span class="p">(</span><span class="n">prediction</span><span class="p">):</span>
+		<span class="k">raise</span> <span class="nc">ValueError</span><span class="p">(</span><span class="sh">'</span><span class="s">Prediction and groundTruth not in same length</span><span class="sh">'</span><span class="p">)</span>
 
 	<span class="n">accuracyCount</span> <span class="o">=</span> <span class="mi">0</span>
-	<span class="n">length</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">prediction</span><span class="p">)</span>
-	<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">length</span><span class="p">):</span>
+	<span class="n">length</span> <span class="o">=</span> <span class="nf">len</span><span class="p">(</span><span class="n">prediction</span><span class="p">)</span>
+	<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">length</span><span class="p">):</span>
 		<span class="k">if</span> <span class="n">groundTruth</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">prediction</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
 			<span class="n">accuracyCount</span> <span class="o">+=</span> <span class="mi">1</span>
 
 	<span class="n">accuracy_score</span> <span class="o">=</span> <span class="n">accuracyCount</span><span class="o">/</span><span class="n">length</span>
-	<span class="k">return</span> <span class="nb">round</span><span class="p">(</span><span class="n">accuracy_score</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+	<span class="k">return</span> <span class="nf">round</span><span class="p">(</span><span class="n">accuracy_score</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
 
 
 <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-	<span class="c"># Load iris dataset</span>
-	<span class="n">iris</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_iris</span><span class="p">()</span>
-	<span class="n">iris_X</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">data</span> <span class="c"># 150 data points, 4 features (Petal Length , Petal Width , Sepal Length , Sepal width)</span>
-	<span class="n">iris_y</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">target</span> <span class="c"># label/class of 150 data points (0,1,2)</span>
-
+	<span class="c1"># Load iris dataset
+</span>	<span class="n">iris</span> <span class="o">=</span> <span class="n">datasets</span><span class="p">.</span><span class="nf">load_iris</span><span class="p">()</span>
+	<span class="n">iris_X</span> <span class="o">=</span> <span class="n">iris</span><span class="p">.</span><span class="n">data</span> <span class="c1"># 150 data points, 4 features (Petal Length , Petal Width , Sepal Length , Sepal width)
+</span>	<span class="n">iris_y</span> <span class="o">=</span> <span class="n">iris</span><span class="p">.</span><span class="n">target</span> <span class="c1"># label/class of 150 data points (0,1,2)
+</span>
 	<span class="n">k_neigbors</span> <span class="o">=</span> <span class="mi">5</span>
 
-	<span class="c"># Shuffle data by shuffling the index</span>
-	<span class="n">randIndex</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">iris_X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-	<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">randIndex</span><span class="p">)</span>
+	<span class="c1"># Shuffle data by shuffling the index
+</span>	<span class="n">randIndex</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">arange</span><span class="p">(</span><span class="n">iris_X</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+	<span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="nf">shuffle</span><span class="p">(</span><span class="n">randIndex</span><span class="p">)</span>
 
 	<span class="n">iris_X</span> <span class="o">=</span> <span class="n">iris_X</span><span class="p">[</span><span class="n">randIndex</span><span class="p">]</span>
 	<span class="n">iris_y</span> <span class="o">=</span> <span class="n">iris_y</span><span class="p">[</span><span class="n">randIndex</span><span class="p">]</span>
 
-	<span class="c"># Split training set/ test set (100/50)</span>
-	<span class="n">X_train</span> <span class="o">=</span> <span class="n">iris_X</span><span class="p">[:</span><span class="mi">100</span><span class="p">,:]</span>
+	<span class="c1"># Split training set/ test set (100/50)
+</span>	<span class="n">X_train</span> <span class="o">=</span> <span class="n">iris_X</span><span class="p">[:</span><span class="mi">100</span><span class="p">,:]</span>
 	<span class="n">X_test</span> <span class="o">=</span> <span class="n">iris_X</span><span class="p">[</span><span class="mi">100</span><span class="p">:,:]</span>
 	<span class="n">y_train</span> <span class="o">=</span> <span class="n">iris_y</span><span class="p">[:</span><span class="mi">100</span><span class="p">]</span>
 	<span class="n">y_test</span> <span class="o">=</span> <span class="n">iris_y</span><span class="p">[</span><span class="mi">100</span><span class="p">:]</span>
 
-	<span class="c">#apply KNN classifier to each test data</span>
-	<span class="n">y_predict</span> <span class="o">=</span> <span class="p">[]</span>
-	<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">y_test</span><span class="p">)):</span>
-		<span class="n">y_predict</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">predictNearestNeighbor</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">k_neigbors</span><span class="p">))</span> 
+	<span class="c1">#apply KNN classifier to each test data
+</span>	<span class="n">y_predict</span> <span class="o">=</span> <span class="p">[]</span>
+	<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nf">len</span><span class="p">(</span><span class="n">y_test</span><span class="p">)):</span>
+		<span class="n">y_predict</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="nf">predictNearestNeighbor</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">k_neigbors</span><span class="p">))</span> 
 	
-	<span class="k">print</span><span class="p">(</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_predict</span><span class="p">,</span> <span class="n">y_test</span><span class="p">))</span> <span class="c">#output: 0.98</span>
-
-<span class="n">main</span><span class="p">()</span>
+	<span class="nf">print</span><span class="p">(</span><span class="nf">accuracy_score</span><span class="p">(</span><span class="n">y_predict</span><span class="p">,</span> <span class="n">y_test</span><span class="p">))</span> <span class="c1">#output: 0.98
+</span>
+<span class="nf">main</span><span class="p">()</span>
 </code></pre></div></div>
 <p><a name="4-discussion"></a></p>
 <h2 id="4-discussion">4. Discussion</h2>
@@ -519,7 +511,7 @@ Additional funtions for KNN
 <h3 id="41-hyperparameter">4.1. Hyperparameter</h3>
 <p>There are several hyperparameter that we can tweet to find the best solution:</p>
 
-<p>1.<strong>K</strong>: High <script type="math/tex">K</script> resulted in more noise-tolerant, it means small <script type="math/tex">K</script> will make the KNN very sensitive to noise/ outlier.</p>
+<p>1.<strong>K</strong>: High \(K\) resulted in more noise-tolerant, it means small \(K\) will make the KNN very sensitive to noise/ outlier.</p>
 <div class="imgcap">
 <img style="display: inline-block; width: 100%;" src="/public/post-assets/KNearestNeighbors/compareK.PNG" width="500" align="center" />
 <div class="thecap"><br />Small K means more sensitive to noise, resulted in overfitting</div>
@@ -549,27 +541,7 @@ Additional funtions for KNN
 <p>[6] https://www.analyticsvidhya.com/blog/2017/09/30-questions-test-k-nearest-neighbors-algorithm/</p>
 
 </div>
-        <!-- Start of StatCounter Code for Default Guide -->
-        <hr>
-Total visits:
-<script type="text/javascript">
-var sc_project=11553218; 
-var sc_invisible=0; 
-var sc_security="55ea133f"; 
-var sc_text=2; 
-var scJsHost = (("https:" == document.location.protocol) ?
-"https://secure." : "http://www.");
-document.write("<sc"+"ript type='text/javascript' src='" +
-scJsHost+
-"statcounter.com/counter/counter.js'></"+"script>");
-</script>
-<noscript><div class="statcounter"><a title="Web Analytics
-Made Easy - StatCounter" href="http://statcounter.com/"
-target="_blank"><img class="statcounter"
-src="//c.statcounter.com/11553218/0/55ea133f/0/" alt="Web
-Analytics Made Easy - StatCounter"></a></div></noscript>
-<!-- End of StatCounter Code for Default Guide -->
-<a href="http://statcounter.com/p11553218/?guest=1">(Powered by Statcounter)</a>
+
 <div class="related">
   <h2>Related Posts</h2>
   <ul class="related-posts">
@@ -641,7 +613,7 @@ s.setAttribute('data-timestamp', +new Date());
 })();
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-   
+
       </div>
     </div>
 

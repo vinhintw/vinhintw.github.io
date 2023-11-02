@@ -7,16 +7,14 @@ title: About
   Thank you for reaching me out.
 </p>
 
-I'm currently a Computer Science undergrad student at [Swinburne University of Technology](https://en.wikipedia.org/wiki/Swinburne_University_of_Technology) in Melbourne. 
+I'm currently a Computer Science undergrad student at [MingChuan University](https://en.wikipedia.org/wiki/Ming_Chuan_University) in TaiWan.
 
 **Contact me:**
 
-Phone number: +61 413 727 184 (Australian number)
+Gmail: vinhintw2014@gmail.com
 
-Gmail: tuandunglai@gmail.com
+Facebook: https://www.facebook.com/vinhintw.info
 
-Facebook: https://www.facebook.com/dung.lai.733
+Linkedin:
 
-Linkedin: https://www.linkedin.com/in/tuandunglai/
-
-Github: https://github.com/DungLai
+Github: https://github.com/vinhintw
