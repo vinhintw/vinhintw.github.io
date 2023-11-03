@@ -10,13 +10,15 @@ highlighter:         rouge #change highlighter at https://benhur07b.github.io/20
 title:               Vinh Ng
 tagline:             'blog'
 description:         'A personal website of <a href="https://vinhintw.github.io/about" target="">Vinh Ng</a>, containing technical blog on technology.'
-# url:                 
+# url:
 # baseurl:             'https://vinhintw.github.io'
 url:                 http://lanyon.getpoole.com
 baseurl:             ''
 paginate:            5
 
 # About/contact
+gravatar_md5: bda79d1ebf61d3550ede09cd1939efde
+
 plugins:
   - jekyll-paginate
 author:
