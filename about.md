@@ -7,7 +7,7 @@ title: About
   Thank you for reaching me out.
 </p>
 
-I'm currently a Computer Science undergrad student at [MingChuan University](https://en.wikipedia.org/wiki/Ming_Chuan_University) in Taiwan.
+I'm currently a Information Management undergrad student at [MingChuan University](https://en.wikipedia.org/wiki/Ming_Chuan_University) in Taiwan.
 
 **Contact me:**
 

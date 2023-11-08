@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Double Linked List in Java &middot; Vinh Ng
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/lanyon.css">
+  <link rel="stylesheet" href="/public/css/custom.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-precomposed.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+  <!-- <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
+
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BF3TPWNBEM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-BF3TPWNBEM');
+  </script>
+
+  <!-- toogle button -->
+  <script>
+  function myFunction() {
+      var x = document.getElementById("myDIV");
+      if (x.style.display === "none") {
+          x.style.display = "block";
+      } else {
+          x.style.display = "none";
+      }
+  }
+  </script>
+  
+</head>
+
+
+  <body>
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+   <div class="sidebar-logo" style="align:center">
+    <img src="/public/avt.jpg" />
+  </div>
+  <div class="sidebar-item">
+    <p>A personal website of <a href="https://vinhintw.github.io/about" target="">Vinh Ng</a>, containing technical blog on technology.</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+
+    
+
+    
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/about/">About</a>
+        
+      
+    
+      
+    
+    <span class="sidebar-nav-item">Currently v1.0.0</span>
+  </nav>
+
+  <div class="sidebar-item">
+    <p>
+      &copy; 2023. All rights reserved.
+    </p>
+  </div>
+</div>
+
+ 
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Vinh Ng</a>
+            <small>blog</small>
+          </h3>
+        </div>
+      </div>
+
+      <link rel="stylesheet" href="/public/css/blog-index.css">
+
+<nav>
+	<div class='blog-wrapper'>
+		<div class='blog-index'>
+			<strong><u>Data Structure and Algorithm</u></strong></br>
+				<li><a href='https://vinhintw.github.io/2023/11/01/single-linked-list/'>1. Single Linked List</a></li>
+				<li><a href='https://vinhintw.github.io/2023/11/08/double-linked-list/'>1. Double Linked List</a></li>
+				<li><a href='https://vinhintw.github.io/2023/11/01/single-linked-list/'>2. Stack, Queue</a>
+		</div>
+	</div>
+</nav>
+
+      <div class="container content">
+        <div class="post">
+  <h1 style="font-size: 130%;" class="post-title">Double Linked List in Java</h1>
+  <span class="post-date" style="float:none;">08 Nov 2023</span>
+  
+  <h1 id="introduction">Introduction</h1>
+
+<p>In computer science, a double linked list is a versatile data structure that allows efficient insertion, deletion, and traversal of elements. Unlike a single linked list, a double linked list consists of nodes where each node has two pointers: one that points to the next node, and another that points to the previous node. In this blog post, we’ll explore the implementation of a double linked list in Java.</p>
+
+<h2 id="what-is-a-double-linked-list">What is a Double Linked List?</h2>
+
+<p>A double linked list is a data structure composed of nodes. Each node contains two references or pointers: one that points to the previous node and another that points to the next node. This bidirectional connectivity allows for easy traversal in both forward and backward directions. Here are some key characteristics of a double linked list:</p>
+
+<ul>
+  <li>Bidirectional: Each node in the list points to both the next and previous nodes.</li>
+  <li>Dynamic: The list can grow or shrink as elements are added or removed.</li>
+  <li>Efficient Insertions and Deletions: Adding or removing elements at the beginning, middle, or end of the list can be done efficiently.</li>
+</ul>
+
+<h2 id="implementing-a-double-linked-list-in-java">Implementing a Double Linked List in Java</h2>
+
+<p>Let’s dive into the implementation of a double linked list in Java. We’ll cover various operations and methods for working with this data structure. For our implementation, we’ll create a class called <code class="language-plaintext highlighter-rouge">DoubleLinkedList</code> with the following key methods:</p>
+
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">size()</code>: Returns the number of elements in the list.</li>
+  <li><code class="language-plaintext highlighter-rouge">isEmpty()</code>: Checks if the list is empty.</li>
+  <li><code class="language-plaintext highlighter-rouge">valueAt(index)</code>: Returns the value of the element at a given index.</li>
+  <li><code class="language-plaintext highlighter-rouge">pushFront(value)</code>: Adds an item to the front of the list.</li>
+  <li><code class="language-plaintext highlighter-rouge">popFront()</code>: Removes the front item and returns its value.</li>
+  <li><code class="language-plaintext highlighter-rouge">pushBack(value)</code>: Adds an item to the end of the list.</li>
+  <li><code class="language-plaintext highlighter-rouge">popBack()</code>: Removes the end item and returns its value.</li>
+  <li><code class="language-plaintext highlighter-rouge">front()</code>: Returns the value of the front item.</li>
+  <li><code class="language-plaintext highlighter-rouge">back()</code>: Returns the value of the end item.</li>
+  <li><code class="language-plaintext highlighter-rouge">insert(index, value)</code>: Inserts a value at the specified index.</li>
+  <li><code class="language-plaintext highlighter-rouge">erase(index)</code>: Removes a node at the given index.</li>
+  <li><code class="language-plaintext highlighter-rouge">search(value)</code>: Searches the list and returns an array of indexes where the value is found.</li>
+  <li><code class="language-plaintext highlighter-rouge">clear()</code>: Empties the list.</li>
+  <li><code class="language-plaintext highlighter-rouge">toString()</code>: Return all data of list.</li>
+</ol>
+
+<h2 id="implementation">Implementation</h2>
+
+<p>Let’s start with the Node class</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//ListNode class, each node has data and the reference to the next node and previous node</span>
+<span class="kd">class</span> <span class="nc">Node</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="o">{</span>
+    <span class="no">T</span> <span class="n">data</span><span class="o">;</span>
+    <span class="nc">Node</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="n">next</span><span class="o">;</span>
+    <span class="nc">Node</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="n">prev</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="nf">Node</span><span class="o">(</span><span class="no">T</span> <span class="n">data</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">next</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">prev</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+<p>and the Double Link List class</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">DoubleLinkedList</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;{</span>
+    <span class="kd">private</span> <span class="nc">Node</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="n">head</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="nc">Node</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="n">tail</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">size</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="nf">DoubleLinkedList</span><span class="o">(){</span>
+        <span class="n">head</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="n">tail</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="n">size</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+    <span class="o">}</span>
+</code></pre></div></div>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">size</span><span class="o">(){</span>
+            <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">size</span><span class="o">;</span>
+        <span class="o">}</span>
+</code></pre></div></div>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isEmpty</span><span class="o">(){</span>
+            <span class="k">return</span> <span class="n">size</span> <span class="o">==</span> <span class="mi">0</span><span class="o">;</span>
+        <span class="o">}</span>
+</code></pre></div></div>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c1">//return the value of the nth element, index start at 0</span>
+    <span class="kd">public</span> <span class="no">T</span> <span class="nf">valueAt</span><span class="o">(</span><span class="kt">int</span> <span class="n">index</span><span class="o">){</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">index</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">index</span> <span class="o">&gt;=</span> <span class="n">size</span><span class="o">){</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="nf">IndexOutOfBoundsException</span><span class="o">(</span><span class="s">"Index out of bounds"</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="nc">Node</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="n">current</span> <span class="o">=</span> <span class="n">head</span><span class="o">;</span>
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">index</span><span class="o">;</span> <span class="n">i</span><span class="o">++){</span>
+            <span class="n">current</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">current</span><span class="o">.</span><span class="na">data</span><span class="o">;</span>
+    <span class="o">}</span>
+
+</code></pre></div></div>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c1">//"push an item to the front of the list"</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">pushFront</span><span class="o">(</span><span class="no">T</span> <span class="n">value</span><span class="o">){</span>
+        <span class="nc">Node</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="n">newNode</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Node</span><span class="o">&lt;&gt;(</span><span class="n">value</span><span class="o">);</span>
+        <span class="n">newNode</span><span class="o">.</span><span class="na">next</span> <span class="o">=</span> <span class="n">head</span><span class="o">;</span>
+        <span class="n">newNode</span><span class="o">.</span><span class="na">prev</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">head</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">head</span><span class="o">.</span><span class="na">prev</span> <span class="o">=</span> <span class="n">newNode</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="n">head</span> <span class="o">=</span> <span class="n">newNode</span><span class="o">;</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">isEmpty</span><span class="o">()){</span>
+            <span class="n">tail</span> <span class="o">=</span> <span class="n">head</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="n">size</span><span class="o">++;</span>
+    <span class="o">}</span>
+</code></pre></div></div>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c1">//"add item to end of list"</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">pushBack</span><span class="o">(</span><span class="no">T</span> <span class="n">value</span><span class="o">){</span>
+        <span class="nc">Node</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="n">newNode</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Node</span><span class="o">&lt;&gt;(</span><span class="n">value</span><span class="o">);</span>
+        <span class="n">newNode</span><span class="o">.</span><span class="na">next</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="n">newNode</span><span class="o">.</span><span class="na">prev</span> <span class="o">=</span> <span class="n">tail</span><span class="o">;</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">tail</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">tail</span><span class="o">.</span><span class="na">next</span> <span class="o">=</span> <span class="n">newNode</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="n">tail</span> <span class="o">=</span> <span class="n">newNode</span><span class="o">;</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">isEmpty</span><span class="o">())</span> <span class="o">{</span>
+            <span class="n">head</span> <span class="o">=</span> <span class="n">newNode</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="n">size</span><span class="o">++;</span>
+    <span class="o">}</span>
+</code></pre></div></div>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c1">//"remove end item and return its value"</span>
+    <span class="kd">public</span> <span class="no">T</span> <span class="nf">popBack</span><span class="o">(){</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">tail</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="nf">IllegalStateException</span><span class="o">(</span><span class="s">"List is empty"</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="no">T</span> <span class="n">value</span> <span class="o">=</span> <span class="n">tail</span><span class="o">.</span><span class="na">data</span><span class="o">;</span>
+        <span class="n">tail</span> <span class="o">=</span> <span class="n">tail</span><span class="o">.</span><span class="na">prev</span><span class="o">;</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">tail</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">tail</span><span class="o">.</span><span class="na">next</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+            <span class="n">head</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="n">size</span><span class="o">--;</span>
+        <span class="k">return</span> <span class="n">value</span><span class="o">;</span>
+    <span class="o">}</span>
+</code></pre></div></div>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c1">//"remove front item and return its value"</span>
+    <span class="kd">public</span> <span class="no">T</span> <span class="nf">popFront</span><span class="o">(){</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">head</span> <span class="o">==</span> <span class="kc">null</span><span class="o">){</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="nf">IllegalStateException</span><span class="o">(</span><span class="s">"List is empty"</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="no">T</span> <span class="n">value</span> <span class="o">=</span> <span class="n">head</span><span class="o">.</span><span class="na">data</span><span class="o">;</span>
+        <span class="n">head</span> <span class="o">=</span> <span class="n">head</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">head</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">head</span><span class="o">.</span><span class="na">prev</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+            <span class="n">tail</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="n">size</span><span class="o">--;</span>
+        <span class="k">return</span> <span class="n">value</span><span class="o">;</span>
+    <span class="o">}</span>
+</code></pre></div></div>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c1">//get value of front item</span>
+    <span class="kd">public</span> <span class="no">T</span> <span class="nf">front</span><span class="o">(){</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">head</span> <span class="o">==</span> <span class="kc">null</span><span class="o">){</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="nf">IllegalStateException</span><span class="o">(</span><span class="s">"List is empty"</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">head</span><span class="o">.</span><span class="na">data</span><span class="o">;</span>
+    <span class="o">}</span>
+</code></pre></div></div>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c1">//get value of end item</span>
+    <span class="kd">public</span> <span class="no">T</span> <span class="nf">back</span><span class="o">(){</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">tail</span> <span class="o">==</span> <span class="kc">null</span><span class="o">){</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="nf">IllegalStateException</span><span class="o">(</span><span class="s">"List is empty"</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">tail</span><span class="o">.</span><span class="na">data</span><span class="o">;</span>
+    <span class="o">}</span>
+</code></pre></div></div>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c1">//insert value at index, put value at position index so current item at that index is pointed to the new item at index, index starts at 0</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">insert</span><span class="o">(</span><span class="kt">int</span> <span class="n">index</span><span class="o">,</span> <span class="no">T</span> <span class="n">value</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">index</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">index</span> <span class="o">&gt;</span> <span class="n">size</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">throw</span> <span class="k">new</span> <span class="nf">IndexOutOfBoundsException</span><span class="o">(</span><span class="s">"Index out of bounds"</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="k">if</span> <span class="o">(</span><span class="n">index</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">push_front</span><span class="o">(</span><span class="n">value</span><span class="o">);</span>
+    <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">index</span> <span class="o">==</span> <span class="n">size</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">push_back</span><span class="o">(</span><span class="n">value</span><span class="o">);</span>
+    <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+        <span class="nc">Node</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="n">newNode</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Node</span><span class="o">&lt;&gt;(</span><span class="n">value</span><span class="o">);</span>
+        <span class="nc">Node</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="n">current</span> <span class="o">=</span> <span class="n">head</span><span class="o">;</span>
+
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">index</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+            <span class="n">current</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
+        <span class="o">}</span>
+
+        <span class="n">newNode</span><span class="o">.</span><span class="na">next</span> <span class="o">=</span> <span class="n">current</span><span class="o">;</span>
+        <span class="n">newNode</span><span class="o">.</span><span class="na">prev</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="na">prev</span><span class="o">;</span>
+        <span class="n">current</span><span class="o">.</span><span class="na">prev</span><span class="o">.</span><span class="na">next</span> <span class="o">=</span> <span class="n">newNode</span><span class="o">;</span>
+        <span class="n">current</span><span class="o">.</span><span class="na">prev</span> <span class="o">=</span> <span class="n">newNode</span><span class="o">;</span>
+
+        <span class="n">size</span><span class="o">++;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c1">//remove a node from the list by its position, change the referece of the node that point to them to the reference of next node from the deleted node</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">erase</span><span class="o">(</span><span class="kt">int</span> <span class="n">index</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">index</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">index</span> <span class="o">&gt;=</span> <span class="n">size</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="nf">IndexOutOfBoundsException</span><span class="o">(</span><span class="s">"Index out of bounds"</span><span class="o">);</span>
+        <span class="o">}</span>
+
+        <span class="k">if</span> <span class="o">(</span><span class="n">index</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">head</span> <span class="o">==</span> <span class="n">tail</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">head</span> <span class="o">=</span> <span class="n">tail</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+            <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+                <span class="n">head</span> <span class="o">=</span> <span class="n">head</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
+                <span class="n">head</span><span class="o">.</span><span class="na">prev</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+            <span class="o">}</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">index</span> <span class="o">==</span> <span class="n">size</span> <span class="o">-</span> <span class="mi">1</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">tail</span> <span class="o">=</span> <span class="n">tail</span><span class="o">.</span><span class="na">prev</span><span class="o">;</span>
+            <span class="n">tail</span><span class="o">.</span><span class="na">next</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+            <span class="nc">Node</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="n">current</span> <span class="o">=</span> <span class="n">head</span><span class="o">;</span>
+            <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">index</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+                <span class="n">current</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
+            <span class="o">}</span>
+            <span class="n">current</span><span class="o">.</span><span class="na">prev</span><span class="o">.</span><span class="na">next</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
+            <span class="n">current</span><span class="o">.</span><span class="na">next</span><span class="o">.</span><span class="na">prev</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="na">prev</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="n">size</span><span class="o">--;</span>
+    <span class="o">}</span>
+</code></pre></div></div>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c1">//search list and return the index that contains the position of the value that matches, index start at 0</span>
+    <span class="kd">public</span> <span class="nc">String</span> <span class="nf">search</span><span class="o">(</span><span class="no">T</span> <span class="n">value</span><span class="o">){</span>
+        <span class="nc">String</span> <span class="n">indexes</span> <span class="o">=</span> <span class="s">""</span><span class="o">;</span>
+        <span class="nc">Node</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="n">current</span> <span class="o">=</span> <span class="n">head</span><span class="o">;</span>
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">size</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">current</span><span class="o">.</span><span class="na">data</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">value</span><span class="o">))</span> <span class="o">{</span>
+                <span class="n">indexes</span> <span class="o">=</span> <span class="n">indexes</span> <span class="o">+</span><span class="s">" "</span><span class="o">+</span> <span class="n">i</span><span class="o">;</span>
+            <span class="o">}</span>
+            <span class="n">current</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">indexes</span><span class="o">;</span>
+    <span class="o">}</span>
+</code></pre></div></div>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c1">//empty the list</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">clear</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">head</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="n">tail</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="n">size</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+    <span class="o">}</span>
+</code></pre></div></div>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c1">//outputs all value of list</span>
+    <span class="kd">public</span> <span class="nc">String</span> <span class="nf">toString</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">String</span> <span class="n">result</span> <span class="o">=</span> <span class="s">"Double Linked List: ["</span><span class="o">;</span>
+        <span class="nc">Node</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="n">current</span> <span class="o">=</span> <span class="n">head</span><span class="o">;</span>
+
+        <span class="k">while</span> <span class="o">(</span><span class="n">current</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">result</span> <span class="o">+=</span> <span class="n">current</span><span class="o">.</span><span class="na">data</span><span class="o">;</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">current</span><span class="o">.</span><span class="na">next</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">result</span> <span class="o">+=</span> <span class="s">" &lt;-&gt; "</span><span class="o">;</span>
+            <span class="o">}</span>
+            <span class="n">current</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
+        <span class="o">}</span>
+
+        <span class="n">result</span> <span class="o">+=</span> <span class="s">"]"</span><span class="o">;</span>
+        <span class="k">return</span> <span class="n">result</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+<h2 id="testing">Testing</h2>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+            <span class="c1">// test commands</span>
+    <span class="o">}</span>
+
+    <span class="c1">//method for testing</span>
+    <span class="c1">//print head,tail and the actual list</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">printListInfor</span><span class="o">(</span><span class="nc">DoubleLinkedList</span> <span class="n">list</span><span class="o">){</span>
+        <span class="k">if</span> <span class="o">(!</span><span class="n">list</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">())</span> <span class="o">{</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Front: "</span> <span class="o">+</span> <span class="n">list</span><span class="o">.</span><span class="na">front</span><span class="o">()</span> <span class="o">+</span> <span class="s">" Back: "</span> <span class="o">+</span> <span class="n">list</span><span class="o">.</span><span class="na">back</span><span class="o">());</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"The list is empty."</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Actual list: "</span> <span class="o">+</span> <span class="n">list</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+<h3 id="test-size-pushfront-isempty">Test size(), pushFront(), isEmpty()</h3>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">DoubleLinkedList</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">DoubleLinkedList</span><span class="o">&lt;&gt;();</span>
+
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Is the list empty? "</span> <span class="o">+</span> <span class="n">list</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">());</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"List size: "</span> <span class="o">+</span> <span class="n">list</span><span class="o">.</span><span class="na">size</span><span class="o">()</span> <span class="o">+</span><span class="s">"\n"</span><span class="o">);</span>
+
+        <span class="n">list</span><span class="o">.</span><span class="na">pushFront</span><span class="o">(</span><span class="mi">3</span><span class="o">);</span>
+        <span class="n">printListInfor</span><span class="o">(</span><span class="n">list</span><span class="o">);</span>
+
+        <span class="n">list</span><span class="o">.</span><span class="na">pushFront</span><span class="o">(</span><span class="mi">2</span><span class="o">);</span>
+        <span class="n">printListInfor</span><span class="o">(</span><span class="n">list</span><span class="o">);</span>
+
+        <span class="n">list</span><span class="o">.</span><span class="na">pushFront</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>
+        <span class="n">printListInfor</span><span class="o">(</span><span class="n">list</span><span class="o">);</span>
+    <span class="o">}</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Is the list empty? true
+List size: 0
+           
+Front: 3 Back: 3
+Actual list: Double Linked List: [3]
+        
+Front: 2 Back: 3
+Actual list: Double Linked List: [2 &lt;-&gt; 3]
+         
+Front: 1 Back: 3
+Actual list: Double Linked List: [1 &lt;-&gt; 2 &lt;-&gt; 3]
+</code></pre></div></div>
+
+<h3 id="test-valueatint-index">Test valueAt(int index)</h3>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">printListInfor</span><span class="o">(</span><span class="n">list</span><span class="o">);</span>
+
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Value at index 2: "</span> <span class="o">+</span> <span class="n">list</span><span class="o">.</span><span class="na">valueAt</span><span class="o">(</span><span class="mi">2</span><span class="o">));</span>
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Value at index 1: "</span> <span class="o">+</span> <span class="n">list</span><span class="o">.</span><span class="na">valueAt</span><span class="o">(</span><span class="mi">1</span><span class="o">));</span>
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Value at index 0: "</span> <span class="o">+</span> <span class="n">list</span><span class="o">.</span><span class="na">valueAt</span><span class="o">(</span><span class="mi">0</span><span class="o">));</span>
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Value at index -1: "</span> <span class="o">+</span> <span class="n">list</span><span class="o">.</span><span class="na">valueAt</span><span class="o">(-</span><span class="mi">1</span><span class="o">));</span>
+
+
+
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Front: 1 Back: 3
+Actual list: Double Linked List: [1 &lt;-&gt; 2 &lt;-&gt; 3]
+
+Value at index 2: 3
+Value at index 1: 2
+Value at index 0: 1
+Exception in thread "main" java.lang.IndexOutOfBoundsException: Index out of bounds
+        at SingleLinkedList.valueAt(Main.java:103)
+        at Main.main(Main.java:235)
+</code></pre></div></div>
+
+<h3 id="test-popfront">Test popFront()</h3>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">list</span><span class="o">.</span><span class="na">pushFront</span><span class="o">(</span><span class="mi">4</span><span class="o">);</span>
+<span class="n">printListInfor</span><span class="o">(</span><span class="n">list</span><span class="o">);</span>
+
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Value return by pop front: "</span> <span class="o">+</span> <span class="n">list</span><span class="o">.</span><span class="na">popFront</span><span class="o">());</span>
+<span class="n">printListInfor</span><span class="o">(</span><span class="n">list</span><span class="o">);</span>
+
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Value return by pop front: "</span> <span class="o">+</span> <span class="n">list</span><span class="o">.</span><span class="na">popFront</span><span class="o">());</span>
+<span class="n">printListInfor</span><span class="o">(</span><span class="n">list</span><span class="o">);</span>
+
+
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Value return by pop front: "</span> <span class="o">+</span> <span class="n">list</span><span class="o">.</span><span class="na">popFront</span><span class="o">());</span>
+<span class="n">printListInfor</span><span class="o">(</span><span class="n">list</span><span class="o">);</span>
+
+
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Value return by pop front: "</span> <span class="o">+</span> <span class="n">list</span><span class="o">.</span><span class="na">popFront</span><span class="o">());</span>
+<span class="n">printListInfor</span><span class="o">(</span><span class="n">list</span><span class="o">);</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Front: 4 Back: 3
+Actual list: Double Linked List: [4 &lt;-&gt; 1 &lt;-&gt; 2 &lt;-&gt; 3]
+
+Value return by pop front: 4
+Front: 1 Back: 3
+Actual list: Double Linked List: [1 &lt;-&gt; 2 &lt;-&gt; 3]
+
+Value return by pop front: 1
+Front: 2 Back: 3
+Actual list: Double Linked List: [2 &lt;-&gt; 3]
+
+Value return by pop front: 2
+Front: 3 Back: 3
+Actual list: Double Linked List: [3]
+
+Value return by pop front: 3
+The list is empty.
+Actual list: Double Linked List: []
+</code></pre></div></div>
+
+<h3 id="test-pushback">Test pushBack()</h3>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">printListInfor</span><span class="o">(</span><span class="n">list</span><span class="o">);</span>
+
+<span class="n">list</span><span class="o">.</span><span class="na">pushBack</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>
+<span class="n">printListInfor</span><span class="o">(</span><span class="n">list</span><span class="o">);</span>
+
+<span class="n">list</span><span class="o">.</span><span class="na">pushBack</span><span class="o">(</span><span class="mi">2</span><span class="o">);</span>
+<span class="n">printListInfor</span><span class="o">(</span><span class="n">list</span><span class="o">);</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The list is empty.
+Actual list: Double Linked List: []
+
+Front: 1 Back: 1
+Actual list: Double Linked List: [1]
+
+Front: 1 Back: 2
+Actual list: Double Linked List: [1 &lt;-&gt; 2]
+</code></pre></div></div>
+
+<h3 id="test-popback">Test popBack()</h3>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">list</span><span class="o">.</span><span class="na">push_back</span><span class="o">(</span><span class="mi">3</span><span class="o">);</span>
+<span class="n">printListInfor</span><span class="o">(</span><span class="n">list</span><span class="o">);</span>
+
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Value return by pop back: "</span> <span class="o">+</span> <span class="n">list</span><span class="o">.</span><span class="na">popBack</span><span class="o">());</span>
+<span class="n">printListInfor</span><span class="o">(</span><span class="n">list</span><span class="o">);</span>
+
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Value return by pop back: "</span> <span class="o">+</span> <span class="n">list</span><span class="o">.</span><span class="na">popBack</span><span class="o">());</span>
+<span class="n">printListInfor</span><span class="o">(</span><span class="n">list</span><span class="o">);</span>
+
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Value return by pop back: "</span> <span class="o">+</span> <span class="n">list</span><span class="o">.</span><span class="na">popBack</span><span class="o">());</span>
+<span class="n">printListInfor</span><span class="o">(</span><span class="n">list</span><span class="o">);</span>
+
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Value return by pop back: "</span> <span class="o">+</span> <span class="n">list</span><span class="o">.</span><span class="na">popBack</span><span class="o">());</span>
+<span class="n">printListInfor</span><span class="o">(</span><span class="n">list</span><span class="o">);</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Front: 1 Back: 3
+Actual list: Double Linked List: [1 &lt;-&gt; 2 &lt;-&gt; 3]
+
+Value return by pop back: 3
+Front: 1 Back: 2
+Actual list: Double Linked List: [1 &lt;-&gt; 2]
+
+Value return by pop back: 2
+Front: 1 Back: 1
+Actual list: Double Linked List: [1]
+
+Value return by pop back: 1
+The list is empty.
+Actual list: Double Linked List: []
+
+Exception in thread "main" java.lang.IllegalStateException: List is empty
+        at DoubleLinkedList.popBack(Main.java:86)
+        at Main.main(Main.java:243)
+</code></pre></div></div>
+
+<h3 id="test-front-back">Test front() back()</h3>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">printListInfor</span><span class="o">(</span><span class="n">list</span><span class="o">);</span>
+
+<span class="n">list</span><span class="o">.</span><span class="na">pushBack</span><span class="o">(</span><span class="mi">3</span><span class="o">);</span>
+<span class="n">printListInfor</span><span class="o">(</span><span class="n">list</span><span class="o">);</span>
+
+<span class="n">list</span><span class="o">.</span><span class="na">push_back</span><span class="o">(</span><span class="mi">2</span><span class="o">);</span>
+<span class="n">printListInfor</span><span class="o">(</span><span class="n">list</span><span class="o">);</span>
+
+<span class="n">list</span><span class="o">.</span><span class="na">push_back</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>
+<span class="n">printListInfor</span><span class="o">(</span><span class="n">list</span><span class="o">);</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The list is empty.
+Actual list: Double Linked List: []
+
+Front: 3 Back: 3
+Actual list: Double Linked List: [3]
+
+Front: 3 Back: 2
+Actual list: Double Linked List: [3 &lt;-&gt; 2]
+
+Front: 3 Back: 1
+Actual list: Double Linked List: [3 &lt;-&gt; 2 &lt;-&gt; 1]
+</code></pre></div></div>
+
+<h2 id="test-insertint-index-t-value">Test insert(int index, T value)</h2>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">list</span><span class="o">.</span><span class="na">clear</span><span class="o">();</span>
+<span class="n">printListInfor</span><span class="o">(</span><span class="n">list</span><span class="o">);</span>
+
+<span class="n">list</span><span class="o">.</span><span class="na">insert</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span><span class="mi">1</span><span class="o">);</span>
+<span class="n">printListInfor</span><span class="o">(</span><span class="n">list</span><span class="o">);</span>
+
+<span class="n">list</span><span class="o">.</span><span class="na">insert</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span><span class="mi">2</span><span class="o">);</span>
+<span class="n">printListInfor</span><span class="o">(</span><span class="n">list</span><span class="o">);</span>
+
+<span class="n">list</span><span class="o">.</span><span class="na">insert</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span><span class="mi">2</span><span class="o">);</span>
+<span class="n">printListInfor</span><span class="o">(</span><span class="n">list</span><span class="o">);</span>
+
+<span class="n">list</span><span class="o">.</span><span class="na">insert</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span><span class="mi">3</span><span class="o">);</span>
+<span class="n">printListInfor</span><span class="o">(</span><span class="n">list</span><span class="o">);</span>
+
+<span class="n">list</span><span class="o">.</span><span class="na">insert</span><span class="o">(</span><span class="mi">2</span><span class="o">,</span><span class="mi">4</span><span class="o">);</span>
+<span class="n">printListInfor</span><span class="o">(</span><span class="n">list</span><span class="o">);</span>
+
+<span class="n">list</span><span class="o">.</span><span class="na">insert</span><span class="o">(-</span><span class="mi">1</span><span class="o">,</span><span class="mi">1</span><span class="o">);</span>
+<span class="n">printListInfor</span><span class="o">(</span><span class="n">list</span><span class="o">);</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Actual list: Double Linked List: []
+
+Front: 1 Back: 1
+Actual list: Double Linked List: [1]
+
+Front: 1 Back: 2
+Actual list: Double Linked List: [1 &lt;-&gt; 2]
+
+Front: 2 Back: 2
+Actual list: Double Linked List: [2 &lt;-&gt; 1 &lt;-&gt; 2]
+
+Front: 3 Back: 2
+Actual list: Double Linked List: [3 &lt;-&gt; 2 &lt;-&gt; 1 &lt;-&gt; 2]
+
+Front: 3 Back: 2
+Actual list: Double Linked List: [3 &lt;-&gt; 2 &lt;-&gt; 4 &lt;-&gt; 1 &lt;-&gt; 2]
+
+Exception in thread "main" java.lang.IndexOutOfBoundsException: Index out of bounds
+        at DoubleLinkedList.insert(Main.java:136)
+        at Main.main(Main.java:241)
+</code></pre></div></div>
+
+<h3 id="test-eraseindex">Test erase(index)</h3>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">printListInfor</span><span class="o">(</span><span class="n">list</span><span class="o">);</span>
+
+<span class="n">list</span><span class="o">.</span><span class="na">erase</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>
+<span class="n">printListInfor</span><span class="o">(</span><span class="n">list</span><span class="o">);</span>
+
+<span class="n">list</span><span class="o">.</span><span class="na">erase</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span>
+<span class="n">printListInfor</span><span class="o">(</span><span class="n">list</span><span class="o">);</span>
+
+
+<span class="n">list</span><span class="o">.</span><span class="na">erase</span><span class="o">(</span><span class="mi">2</span><span class="o">);</span>
+<span class="n">printListInfor</span><span class="o">(</span><span class="n">list</span><span class="o">);</span>
+
+<span class="n">list</span><span class="o">.</span><span class="na">erase</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span>
+<span class="n">printListInfor</span><span class="o">(</span><span class="n">list</span><span class="o">);</span>
+
+<span class="n">list</span><span class="o">.</span><span class="na">erase</span><span class="o">(</span><span class="mi">3</span><span class="o">);</span>
+<span class="n">printListInfor</span><span class="o">(</span><span class="n">list</span><span class="o">);</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Front: 3 Back: 2
+Actual list: Double Linked List: [3 &lt;-&gt; 2 &lt;-&gt; 4 &lt;-&gt; 1 &lt;-&gt; 2]
+
+Front: 3 Back: 2
+Actual list: Double Linked List: [3 &lt;-&gt; 4 &lt;-&gt; 1 &lt;-&gt; 2]
+
+Front: 4 Back: 2
+Actual list: Double Linked List: [4 &lt;-&gt; 1 &lt;-&gt; 2]
+
+Front: 4 Back: 1
+Actual list: Double Linked List: [4 &lt;-&gt; 1]
+
+Front: 1 Back: 1
+Actual list: Double Linked List: [1]
+
+Exception in thread "main" java.lang.IndexOutOfBoundsException: Index out of bounds
+        at DoubleLinkedList.erase(Main.java:159)
+</code></pre></div></div>
+
+<h3 id="test-searcht-value">Test search(T value)</h3>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">list</span><span class="o">.</span><span class="na">clear</span><span class="o">();</span>
+
+<span class="n">list</span><span class="o">.</span><span class="na">insert</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span><span class="mi">1</span><span class="o">);</span>
+
+<span class="n">list</span><span class="o">.</span><span class="na">insert</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span><span class="mi">2</span><span class="o">);</span>
+
+<span class="n">list</span><span class="o">.</span><span class="na">insert</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span><span class="mi">2</span><span class="o">);</span>
+
+<span class="n">list</span><span class="o">.</span><span class="na">insert</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span><span class="mi">3</span><span class="o">);</span>
+
+<span class="n">list</span><span class="o">.</span><span class="na">insert</span><span class="o">(</span><span class="mi">2</span><span class="o">,</span><span class="mi">4</span><span class="o">);</span>
+
+<span class="n">printListInfor</span><span class="o">(</span><span class="n">list</span><span class="o">);</span>
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">list</span><span class="o">.</span><span class="na">search</span><span class="o">(</span><span class="mi">3</span><span class="o">));</span>
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">list</span><span class="o">.</span><span class="na">search</span><span class="o">(</span><span class="mi">2</span><span class="o">));</span>
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">list</span><span class="o">.</span><span class="na">search</span><span class="o">(</span><span class="mi">1</span><span class="o">));</span>
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">list</span><span class="o">.</span><span class="na">search</span><span class="o">(</span><span class="mi">0</span><span class="o">));</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Front: 3 Back: 2
+Actual list: Double Linked List: [3 &lt;-&gt; 2 &lt;-&gt; 4 &lt;-&gt; 1 &lt;-&gt; 2]
+
+ 0
+ 1 4
+ 3 
+</code></pre></div></div>
+
+</div>
+
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/2023/11/01/single-linked-list/">
+            Linked List, Stack, Queue
+            <small>01 Nov 2023</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div>
+<div id="disqus_thread"></div>
+<script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://vinhintw-github-io-2.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script>
+      (function(document) {
+        var toggle = document.querySelector('.sidebar-toggle');
+        var sidebar = document.querySelector('#sidebar');
+        var checkbox = document.querySelector('#sidebar-checkbox');
+
+        document.addEventListener('click', function(e) {
+          var target = e.target;
+
+          if (!checkbox.checked ||
+             sidebar.contains(target) ||
+             (target === checkbox || target === toggle)) return;
+
+          checkbox.checked = false;
+        }, false);
+      })(document);
+    </script>
+  </body>
+
+  <script id="dsq-count-scr" src="//vinhintw-github-io-2.disqus.com/count.js" async></script>
+</html>
