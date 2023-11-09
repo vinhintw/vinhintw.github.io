@@ -2,7 +2,7 @@
 layout: post
 title: "Double Linked List in Java"
 desc: <div class="tag">Data Structure</div><div class="tag">Java</div></br>An implementation of a double linked list data structure in Java, covering various operations and use cases.
-img: ../public/post-assets/DataStructure/LinkedList/title.gif
+img: ../public/post-assets/DataStructure/LinkedList/DoubleLinkedList/title.png
 comments: true
 ---
 
