@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Introduction to Machine Learning &middot; Vinh Ng
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/lanyon.css">
+  <link rel="stylesheet" href="/public/css/custom.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-precomposed.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+  <!-- <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
+
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BF3TPWNBEM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-BF3TPWNBEM');
+  </script>
+
+  <!-- toogle button -->
+  <script>
+  function myFunction() {
+      var x = document.getElementById("myDIV");
+      if (x.style.display === "none") {
+          x.style.display = "block";
+      } else {
+          x.style.display = "none";
+      }
+  }
+  </script>
+  
+</head>
+
+
+  <body>
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+   <div class="sidebar-logo" style="align:center">
+    <img src="/public/avt.jpg" />
+  </div>
+  <div class="sidebar-item">
+    <p>A personal website of <a href="https://vinhintw.github.io/about" target="">Vinh Ng</a>, containing technical blog on technology.</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+
+    
+
+    
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/about/">About</a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+    <span class="sidebar-nav-item">Currently v1.0.0</span>
+  </nav>
+
+  <div class="sidebar-item">
+    <p>
+      &copy; 2024. All rights reserved.
+    </p>
+  </div>
+</div>
+
+ 
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Vinh Ng</a>
+            <small>blog</small>
+          </h3>
+        </div>
+      </div>
+
+      <link rel="stylesheet" href="/public/css/blog-index.css">
+
+<nav>
+	<div class='blog-wrapper'>
+		<div class='blog-index'>
+			<strong><u>Data Structure and Algorithm</u></strong></br>
+				<li><a href='https://vinhintw.github.io/2023/11/01/single-linked-list/'>1. Single Linked List</a></li>
+				<li><a href='https://vinhintw.github.io/2023/11/01/single-linked-list/'>2. Stack, Queue</a>
+				<li><a href='https://vinhintw.github.io/2023/11/08/double-linked-list/'>3. Double Linked List</a></li>
+			<strong><u>Machine Learning</u></strong></br>
+				<li><a href='https://vinhintw.github.io/2023/11/08/double-linked-list/'>1. Introduction to Machine Learning</a></li>
+		</div>
+	</div>
+</nav>
+
+      <div class="container content">
+        <div class="post">
+  <h1 style="font-size: 130%;" class="post-title">Introduction to Machine Learning</h1>
+  <span class="post-date" style="float:none;">01 Jan 2024</span>
+  
+  <p>In today’s era, the power of <strong>AI - Artificial Intelligence</strong>, and more specifically <strong>Machine Learning</strong>, has sparked an incessant technological wave spreading everywhere. It’s not just a hot topic within academic circles; it has extended its reach, dominating the industrial world. Leading technology conglomerates like Google, Facebook, Microsoft, and promising startups are heavily investing in this field. This has led to the emergence of a myriad of innovative applications, not confined solely to computer science but also transcending into other fields like physics, chemistry, medicine, and even politics.</p>
+
+<p>The pinnacle of Machine Learning’s extraordinary power can be witnessed through AlphaGo, an immensely intelligent machine capable of computations in a space larger than the number of particles in the universe. It not only surpassed any grandmaster but also emphasized the superiority of Machine Learning over traditional methods.</p>
+
+<p>However, this is just a limited view of the proliferation of Artificial Intelligence. In reality, AI - Artificial Intelligence, and more specifically, Machine Learning, have marked a significant stride in the fourth industrial revolution. This technology doesn’t just limit itself to some prominent applications like Google and Tesla’s self-driving cars, Netflix’s movie recommendation system, Facebook’s facial recognition system, Apple’s virtual assistant Siri, and most recently, OpenAI’s ChatGPT, but it also opens an infinite space for its application. From <a href="https://www.facebook.com/zuck/posts/10103351073024591">Jarvis - Mark Zuckerberg’s intelligent home assistant</a> to a plethora of other AI/Machine Learning applications, they have adjusted and improved our lives in an undeniable manner.</p>
+
+<p>Based on the definition provided by ChatGPT language model, <em>Machine learning is a field of artificial intelligence focused on developing algorithms and models that can learn from data to make predictions, recognize patterns, and discover structures without being explicitly programmed for every task</em>. It can be said that the primary purpose of Machine Learning is to enable computers to have some basic cognitive abilities similar to humans:</p>
+<ol>
+  <li>Listening, seeing, understanding language, solving problems, programming, etc.</li>
+  <li>Assisting humans in handling the enormous amount of information we face daily, also known as Big Data.</li>
+</ol>
+
+<p>Indeed, <strong>Big Data</strong> is not just a simple scientific field. It is a common term put forward by the media to indicate the explosion of data in today’s era. It’s no different from terms like the “industrial revolution” or the “software age.” Big Data is the natural result of the robust development of the Internet, with social networks like Facebook, Instagram, Twitter contributing to the increased need for sharing information. Even YouTube, a platform where people share videos and interact through comments, can be considered a social network.</p>
+
+<p>To comprehend the scale of Big Data, consider these figures (as of the time of writing):</p>
+<ul>
+  <li>Nearly 300 hours of video are uploaded to YouTube every minute (according to <a href="https://www.youtube.com/yt/press/statistics.html">https://www.youtube.com/yt/press/statistics.html</a>).</li>
+  <li>Over 900 million people use Facebook daily, with 82.8% of these users coming from outside the US and Canada (according to <a href="http://newsroom.fb.com/company-info/">http://newsroom.fb.com/company-info/</a>).</li>
+  <li>Google processes about 100 billion searches each month, equivalent to 3.3 billion searches per day and 38,000 searches per second. Remarkably, these numbers are constantly increasing every second! (according to <a href="http://www.internetlivestats.com/google-search-statistics/">http://www.internetlivestats.com/google-search-statistics/</a>).</li>
+</ul>
+
+<p>However, the information explosion is not the sole reason for the emergence of Big Data. Although Big Data has only appeared in recent years, the accumulated data from the inception of the Internet at the end of the previous century was substantial. Initially, humans only knew how to store and copy data without knowing how to use it. However, one day, scientists realized that within that data lay an immense amount of knowledge - knowledge that could help us understand humans and society more deeply.</p>
+
+<p>From a user’s list of favorite movies, we can infer their preferences and suggest movies they might not have seen but are compatible with those preferences. From the search history of the online community, we can identify emerging issues and focus on developing more information about those issues. The emergence of Big Data truly began when we realized the value of hidden information in data and had the resources and technology to exploit them on a large scale. It’s no surprise that machine learning plays a significant role in this technology. The relationship between machine learning and Big Data is a mutually supportive link: machine learning advances due to the enhancement of data volume from Big Data, and conversely, the value of Big Data depends on the ability to extract knowledge from data using machine learning.</p>
+
+<p>Machine learning is not a novel concept; in fact, it has existed long before the Internet emerged. One of the earliest machine learning algorithms was the perceptron, developed by Frank Rosenblatt in 1957. This algorithm was useful in classifying two different concepts. An illustration of its application is in classifying spam emails (represented by a triangle) and regular emails (represented by a square). This often posed difficulties in visualizing how this classification should be done. The perceptron accomplishes this by creating a straight line on the plane to divide the two sets of points.</p>
+<div style="align-items: center; justify-content: center; max-width: 50%; max-height: 50%;">
+<img class="image" src="/public/post-assets/MachineLearning/introduction/classification1.png" alt="Image" />
+</div>
+
+<p>The triangle and square points represent emails labeled beforehand and are used to “train” the perceptron. Once the dividing line for the two sets of points is drawn, the perceptron can label the unlabeled points representing emails needing classification.</p>
+
+<p>The email classification process is described as follows: Firstly, we need an algorithm to convert emails into data. This step is crucial because if we can choose an appropriate representation, the perceptron will work much more effectively. Next, the perceptron will use information from each data point to update the parameters of the line it’s trying to find. You can take a look at a perceptron demo (green dots represent the points the perceptron is handling).</p>
+
+<div style="text-align:center;">
+<iframe width="95%" height="500" src="https://www.youtube.com/embed/vGwemZhPlsA?si=mDIm0mZk0jCjeflF" frameborder="0" allowfullscreen=""></iframe>
+<div class="thecap">Perceptron algorithm</div>
+</div>
+
+<p>However, because this is a relatively simple algorithm, it may encounter several issues, such as points to classify lying on the dividing line or in more complex datasets, where no straight dividing line exists.</p>
+<div style="align-items: center; justify-content: center; max-width: 50%; max-height: 50%;">
+<img class="image" src="/public/post-assets/MachineLearning/introduction/clasification-hard.png" alt="Image" />
+</div>
+
+<p>This necessitates non-linear separation methods. But that’s a different story.</p>
+
+<p>The perceptron is a <strong>supervised learning</strong> algorithm: we provide the computer with examples along with the correct answers, hoping the computer will learn and predict for unknown examples in the future. There are also machine learning algorithms that don’t require the correct answers, known as <strong>unsupervised learning</strong>. In this case, the computer tries to discover hidden structures within the dataset without needing correct answers. Another type of machine learning is <strong>reinforcement learning</strong>. In this form, the computer doesn’t receive correct answers but instead receives feedback for each action and adjusts its behavior based on positive or negative feedback. I will delve deeper into reinforcement learning and learning methods in another post.</p>
+
+<p>Next, I’d like to introduce a bit about <strong>deep learning</strong>. In recent years, with remarkable advancements in computing capabilities and the accumulation of enormous data from leading technology conglomerates, the field of Machine Learning has advanced further, opening up a new realm called Deep Learning. Deep Learning has enabled computers to perform tasks that seemed impossible ten years ago: from classifying thousands of different objects in images, automatically captioning images, simulating human speech and handwriting, to interacting with humans, and even composing literature or music. (See more: <a href="http://machinelearningmastery.com/inspirational-applications-deep-learning/">8 Inspirational Applications of Deep Learning</a>)</p>
+
+<hr />
+
+<div class="imgcap">
+<div>
+    <img src="/public/post-assets/MachineLearning/introduction/title.png" width="800" />
+</div>
+<div class="thecap">The relationship between AI, Machine Learning, and Deep Learning. <br /> (Source: <a href="https://blogs.nvidia.com/blog/2016/07/29/whats-difference-artificial-intelligence-machine-learning-deep-learning-ai/">What’s the Difference Between Artificial Intelligence, Machine Learning, and Deep Learning?</a>)</div>
+</div>
+<hr />
+
+<h2 id="further-reading">Further Reading</h2>
+
+<h3 id="courses">Courses</h3>
+
+<h4 id="english">English</h4>
+<ol>
+  <li><a href="https://www.coursera.org/learn/machine-learning">Machine Learning by Andrew Ng on Coursera</a> (<em>Most renowned course on Machine Learning</em>)</li>
+  <li><a href="https://www.udacity.com/course/deep-learning--ud730">Deep Learning by Google on Udacity</a> (<em>An advanced course on Deep Learning with Tensorflow</em>)</li>
+  <li><a href="http://machinelearningmastery.com/">Machine Learning mastery</a> (<em>Fundamental Machine Learning algorithms</em>)</li>
+</ol>
+
+</div>
+
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/2023/11/08/double-linked-list/">
+            Double Linked List in Java
+            <small>08 Nov 2023</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2023/11/01/single-linked-list/">
+            Linked List, Stack, Queue
+            <small>01 Nov 2023</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div>
+<div id="disqus_thread"></div>
+<script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://vinhintw-github-io-2.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script>
+      (function(document) {
+        var toggle = document.querySelector('.sidebar-toggle');
+        var sidebar = document.querySelector('#sidebar');
+        var checkbox = document.querySelector('#sidebar-checkbox');
+
+        document.addEventListener('click', function(e) {
+          var target = e.target;
+
+          if (!checkbox.checked ||
+             sidebar.contains(target) ||
+             (target === checkbox || target === toggle)) return;
+
+          checkbox.checked = false;
+        }, false);
+      })(document);
+    </script>
+  </body>
+
+  <script id="dsq-count-scr" src="//vinhintw-github-io-2.disqus.com/count.js" async></script>
+</html>

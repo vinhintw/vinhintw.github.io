@@ -19,8 +19,12 @@ paginate:            5
 # About/contact
 #gravatar_md5: 9e256a8aa4a000b36f6466983d423ba8480a71f807bf7aaa24f8947c6dc3a35e
 
+
+# Build settings
+theme: minima
 plugins:
   - jekyll-paginate
+
 author:
   name:              Vinh Ng
   facebook:          https://facebook.com/vinhintw.info

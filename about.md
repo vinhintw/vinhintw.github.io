@@ -13,8 +13,8 @@ I'm currently a Information Management undergrad student at [MingChuan Universit
 
 Gmail: vinhintw2014@gmail.com
 
-Facebook: https://www.facebook.com/vinhintw.info
+Facebook: [https://www.facebook.com/vinhintw.info](https://www.facebook.com/vinhintw.info)
 
 Linkedin:
 
-Github: https://github.com/vinhintw
+Github: [https://github.com/vinhintw](https://github.com/vinhintw)
